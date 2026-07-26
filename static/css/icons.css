@@ -1,0 +1,23 @@
+/* ── icons.css ──────────────────────────────────────────────
+ * SVG icon utility classes
+ * All icons use explicit Wu Xing colors:
+ *   - Primary: Jade #4a9e8a (Wood element) — action icons
+ *   - Navigation: Muted #9a958f — chevrons
+ *   - Moon phases: Gold #c9a96e (Earth element)
+ * ─────────────────────────────────────────────────────────── */
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.icon img {
+    display: block;
+}
+
+.icon--sm img { width: 14px; height: 14px; }
+.icon--md img { width: 18px; height: 18px; }
+.icon--lg img { width: 24px; height: 24px; }

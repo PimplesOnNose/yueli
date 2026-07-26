@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>月历 · Yueli</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+
+    <!-- Atmospheric overlays -->
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cloud-thread" aria-hidden="true"></div>
+
+    <!-- ── Header ──────────────────────────────────────────── -->
+    <header class="header" id="header">
+        <div class="header__left">
+            <button class="header__menu" id="btn-menu" aria-label="Menu">☰</button>
+            <div class="header__wordmark">
+                <span class="header__wordmark-zh">月历</span>
+            </div>
+        </div>
+        <div class="header__right">
+            <input type="text" class="header__search" id="search-input"
+                   placeholder="Search events..." aria-label="Search events">
+            <button class="header__action" id="btn-lock" aria-label="Lock"><img src="/static/assets/icons/lock.svg" alt="" width="20" height="20"></button>
+            <button class="header__action" id="btn-export" aria-label="Export backup" title="Export backup"><img src="/static/assets/icons/scroll.svg" alt="" width="20" height="20"></button>
+        </div>
+        <div class="header__seasonal" id="seasonal-botanical"></div>
+    </header>
+
+    <!-- ── Main Content ────────────────────────────────────── -->
+    <main class="main">
+
+        <!-- Daily Wisdom Section (top — 黄历 tradition) -->
+        <section class="wisdom" id="wisdom">
+            <div class="wisdom__header">
+                <span class="wisdom__label"><img src="/static/assets/icons/scroll.svg" alt="" width="16" height="16" style="vertical-align: middle; margin-right: 4px;"> 每日格言 · Daily Wisdom</span>
+                <div class="wisdom__actions">
+                    <button class="wisdom__swap" id="btn-wisdom-swap" aria-label="Swap idiom"><img src="/static/assets/icons/swap.svg" alt="" width="16" height="16"></button>
+                    <button class="wisdom__expand" id="btn-wisdom-expand"><span class="expand-text">More</span> <img src="/static/assets/icons/chevron-right.svg" alt="" width="14" height="14"></button>
+                </div>
+            </div>
+            <div class="wisdom__content" id="wisdom-content">
+                <div class="wisdom__idiom" id="wisdom-idiom"></div>
+                <div class="wisdom__pinyin" id="wisdom-pinyin"></div>
+                <div class="wisdom__meaning" id="wisdom-meaning"></div>
+                <div class="wisdom__example" id="wisdom-example"></div>
+                <div class="wisdom__audio">
+                    <button class="wisdom__audio-btn" id="btn-play-idiom" aria-label="Play idiom"><img src="/static/assets/icons/speaker.svg" alt="" width="14" height="14"> 正音</button>
+                    <button class="wisdom__audio-btn" id="btn-play-ex1" aria-label="Play example 1"><img src="/static/assets/icons/speaker.svg" alt="" width="14" height="14"> 其一</button>
+                    <button class="wisdom__audio-btn" id="btn-play-ex2" aria-label="Play example 2"><img src="/static/assets/icons/speaker.svg" alt="" width="14" height="14"> 其二</button>
+                </div>
+            </div>
+            <div class="wisdom__extras" id="wisdom-extras" hidden>
+                <div class="wisdom__explanation" id="wisdom-explanation"></div>
+                <div class="wisdom__similar" id="wisdom-similar"></div>
+            </div>
+        </section>
+
+        <!-- Calendar Section -->
+        <section class="calendars" id="calendars">
+
+            <!-- Gregorian Calendar -->
+            <div class="calendar calendar--gregorian" id="calendar-gregorian">
+                <div class="calendar__header">
+                    <button class="calendar__nav" id="greg-prev" aria-label="Previous month"><img src="/static/assets/icons/chevron-left.svg" alt="" width="20" height="20"></button>
+                    <h2 class="calendar__title" id="greg-title">June 2025</h2>
+                    <button class="calendar__today" id="greg-today">Today</button>
+                    <button class="calendar__nav" id="greg-next" aria-label="Next month"><img src="/static/assets/icons/chevron-right.svg" alt="" width="20" height="20"></button>
+                </div>
+                <div class="calendar__weekdays" id="greg-weekdays"></div>
+                <div class="calendar__grid" id="greg-grid"></div>
+            </div>
+
+            <!-- Lunisolar Calendar -->
+            <div class="calendar calendar--lunisolar" id="calendar-lunisolar">
+                <div class="calendar__header">
+                    <button class="calendar__nav" id="lunar-prev" aria-label="Previous month"><img src="/static/assets/icons/chevron-left.svg" alt="" width="20" height="20"></button>
+                    <h2 class="calendar__title" id="lunar-title">乙巳年 五月</h2>
+                    <button class="calendar__nav" id="lunar-next" aria-label="Next month"><img src="/static/assets/icons/chevron-right.svg" alt="" width="20" height="20"></button>
+                </div>
+                <div class="calendar__weekdays" id="lunar-weekdays"></div>
+                <div class="calendar__grid" id="lunar-grid"></div>
+            </div>
+
+        </section>
+
+        <!-- Agenda Section -->
+        <section class="agenda" id="agenda">
+            <div class="agenda__header">
+                <h3 class="agenda__date" id="agenda-date"><img src="/static/assets/icons/calendar.svg" alt="" width="16" height="16" style="vertical-align: middle; margin-right: 4px;"> June 14, 2025 — 五月十九</h3>
+                <button class="agenda__add" id="btn-add-event"><img src="/static/assets/icons/plus.svg" alt="" width="14" height="14" style="vertical-align: middle; margin-right: 4px;"> Add Event</button>
+            </div>
+            <div class="agenda__list" id="agenda-list">
+                <p class="agenda__empty">Select a date to view events</p>
+            </div>
+        </section>
+
+        <!-- Legend -->
+        <section class="legend" id="legend">
+            <span class="legend__item"><span class="dot dot--fire"></span> Chinese</span>
+            <span class="legend__item"><span class="dot dot--metal"></span> US</span>
+            <span class="legend__item"><span class="dot dot--wood"></span> Personal</span>
+            <span class="legend__item"><span class="dot dot--earth"></span> Solar Terms</span>
+            <span class="legend__item"><span class="dot dot--water"></span> Reminders</span>
+        </section>
+
+    </main>
+
+    <!-- ── Modal: Lock Screen ──────────────────────────────── -->
+    <div class="modal modal--lock" id="modal-lock" hidden>
+        <div class="modal__backdrop"></div>
+        <div class="modal__card">
+            <h2 class="modal__title" id="lock-title">Unlock Yueli</h2>
+            <input type="password" class="modal__input" id="lock-password"
+                   placeholder="Enter password" autocomplete="current-password">
+            <input type="password" class="modal__input" id="lock-password-confirm"
+                   placeholder="Confirm password" hidden>
+            <p class="modal__error" id="lock-error" hidden></p>
+            <button class="modal__button" id="lock-submit">Unlock</button>
+        </div>
+    </div>
+
+    <!-- ── Modal: Event Editor ─────────────────────────────── -->
+    <div class="modal modal--event" id="modal-event" hidden>
+        <div class="modal__backdrop"></div>
+        <div class="modal__card">
+            <h2 class="modal__title">New Event</h2>
+            <input type="text" class="modal__input" id="event-title"
+                   placeholder="Event title" maxlength="200" required>
+            <div class="modal__row">
+                <label>Date</label>
+                <input type="date" class="modal__input" id="event-date">
+            </div>
+            <div class="modal__row">
+                <label>End date</label>
+                <input type="date" class="modal__input" id="event-end-date">
+            </div>
+            <div class="modal__row">
+                <label>All-day</label>
+                <input type="checkbox" id="event-all-day">
+            </div>
+            <div class="modal__row" id="event-time-row">
+                <label>Start time</label>
+                <input type="time" class="modal__input" id="event-time">
+            </div>
+            <div class="modal__row" id="event-end-time-row">
+                <label>End time</label>
+                <input type="time" class="modal__input" id="event-end-time">
+            </div>
+            <textarea class="modal__textarea" id="event-description"
+                      placeholder="Description (optional)" maxlength="2000"></textarea>
+            <div class="modal__row">
+                <label>Remind me</label>
+                <select class="modal__input" id="event-reminder" style="width: auto;">
+                    <option value="none">No reminder</option>
+                    <option value="0">At time of event</option>
+                    <option value="5">5 minutes before</option>
+                    <option value="15">15 minutes before</option>
+                    <option value="30">30 minutes before</option>
+                    <option value="60" selected>1 hour before</option>
+                    <option value="1440">1 day before</option>
+                </select>
+            </div>
+            <div class="modal__actions">
+                <button class="modal__button modal__button--secondary" id="event-cancel">Cancel</button>
+                <button class="modal__button" id="event-save">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Scripts ──────────────────────────────────────────── -->
+    <script src="/static/js/utils.js"></script>
+    <script src="/static/js/lunar-data.js"></script>
+    <script src="/static/js/holidays.js"></script>
+    <script src="/static/js/solar-terms.js"></script>
+    <script src="/static/js/gregorian.js"></script>
+    <script src="/static/js/lunisolar.js"></script>
+    <script src="/static/js/crypto.js"></script>
+    <script src="/static/js/wisdom.js"></script>
+    <script src="/static/js/schedule.js"></script>
+    <script src="/static/js/reminders.js"></script>
+    <script src="/static/js/app.js"></script>
+
+</body>
+</html>

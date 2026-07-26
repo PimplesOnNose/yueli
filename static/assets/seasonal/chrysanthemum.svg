@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+  <!-- Chrysanthemum (菊花) — Autumn — Metal element -->
+  <g stroke="#c9a96e" stroke-width="1.2" fill="none" stroke-linecap="round">
+    <!-- Stem -->
+    <path d="M60 90 Q58 75 56 65"/>
+    <!-- Leaves -->
+    <path d="M56 75 Q45 72 40 68"/>
+    <path d="M58 78 Q68 75 72 72"/>
+    <!-- Flower petals (radial) -->
+    <path d="M60 35 Q58 25 60 15"/>
+    <path d="M60 35 Q50 27 45 18"/>
+    <path d="M60 35 Q70 27 75 18"/>
+    <path d="M60 35 Q48 30 40 25"/>
+    <path d="M60 35 Q72 30 80 25"/>
+    <path d="M60 35 Q50 38 42 35"/>
+    <path d="M60 35 Q70 38 78 35"/>
+    <path d="M60 35 Q52 42 45 42"/>
+    <path d="M60 35 Q68 42 75 42"/>
+    <path d="M60 35 Q55 48 50 50"/>
+    <path d="M60 35 Q65 48 70 50"/>
+    <!-- Center -->
+    <circle cx="60" cy="35" r="4" stroke="#c9a96e" fill="#c9a96e"/>
+  </g>
+</svg>

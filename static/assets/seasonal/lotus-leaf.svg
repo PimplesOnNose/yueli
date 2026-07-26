@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+  <!-- Lotus leaf (荷叶) — Summer — Fire element -->
+  <g stroke="#3a7a6a" stroke-width="1.2" fill="none" stroke-linecap="round">
+    <!-- Stem -->
+    <path d="M60 90 Q58 70 55 55"/>
+    <!-- Leaf outline -->
+    <path d="M25 50 Q30 30 55 20 Q80 30 85 50 Q70 55 60 52 Q50 55 35 50 Z"/>
+    <!-- Leaf veins -->
+    <path d="M55 25 Q58 35 60 48"/>
+    <path d="M40 35 Q50 40 55 48"/>
+    <path d="M70 35 Q62 40 60 48"/>
+    <path d="M30 45 Q45 48 55 48"/>
+    <path d="M80 45 Q65 48 60 48"/>
+  </g>
+</svg>

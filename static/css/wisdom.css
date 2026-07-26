@@ -1,0 +1,192 @@
+/* ── wisdom.css ─────────────────────────────────────────────
+ * Daily Wisdom panel styles
+ * ─────────────────────────────────────────────────────────── */
+
+.wisdom {
+    background: var(--bg-wisdom);
+    border-radius: var(--radius-lg);
+    padding: calc(var(--space-unit) * 3);
+    margin: calc(var(--space-unit) * 3) auto;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid var(--border-jade);
+    border-left: 3px solid var(--color-wood);
+}
+
+.wisdom__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: calc(var(--space-unit) * 2);
+}
+
+.wisdom__label {
+    font-family: var(--font-display);
+    font-size: 14px;
+    color: var(--color-wood);
+    letter-spacing: 0.05em;
+}
+
+.wisdom__actions {
+    display: flex;
+    gap: var(--space-unit);
+}
+
+.wisdom__swap {
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.wisdom__swap:hover {
+    color: var(--color-wood);
+    background: var(--bg-elevated);
+}
+
+.wisdom__expand {
+    font-size: 13px;
+    color: var(--text-muted);
+    padding: 4px 8px;
+    transition: color var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.wisdom__expand img {
+    transition: transform var(--transition-fast);
+}
+
+.wisdom__expand:hover {
+    color: var(--text-secondary);
+}
+
+.wisdom__content {
+    text-align: center;
+}
+
+.wisdom__idiom {
+    font-family: var(--font-display-zh);
+    font-weight: 400;
+    font-size: 32px;
+    color: var(--fg);
+    margin-bottom: calc(var(--space-unit) * 0.75);
+    letter-spacing: 0.1em;
+}
+
+.wisdom__pinyin {
+    font-family: var(--font-pinyin);
+    font-weight: 400;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--fg-muted);
+    margin-bottom: calc(var(--space-unit) * 1.5);
+}
+
+.wisdom__meaning {
+    font-family: var(--font-body-en);
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--fg);
+    margin-bottom: calc(var(--space-unit) * 2);
+}
+
+.wisdom__example {
+    font-family: var(--font-body-zh);
+    font-size: 15px;
+    color: var(--fg-muted);
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.wisdom__example-item {
+    display: flex;
+    gap: calc(var(--space-unit) * 1);
+    margin-bottom: calc(var(--space-unit) * 1.5);
+    text-align: left;
+}
+
+.wisdom__example-num {
+    font-weight: 500;
+    color: var(--color-wood);
+    flex-shrink: 0;
+}
+
+.wisdom__example-item p {
+    margin-bottom: calc(var(--space-unit) * 0.25);
+}
+
+.wisdom__extras {
+    margin-top: calc(var(--space-unit) * 2);
+    padding-top: calc(var(--space-unit) * 2);
+    border-top: 1px solid var(--border-subtle);
+    text-align: left;
+}
+
+.wisdom__explanation {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: calc(var(--space-unit) * 1.5);
+    line-height: 1.6;
+}
+
+.wisdom__similar {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* ── Audio Buttons ─────────────────────────────────────── */
+.wisdom__audio {
+    display: flex;
+    justify-content: center;
+    gap: calc(var(--space-unit) * 1.5);
+    margin-top: calc(var(--space-unit) * 2);
+}
+
+.wisdom__audio-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-wood);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-jade);
+    border-radius: var(--radius-md);
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.wisdom__audio-btn:hover:not(:disabled) {
+    background: rgba(74, 158, 138, 0.15);
+}
+
+.wisdom__audio-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.wisdom__audio-btn img {
+    opacity: 0.8;
+}
+
+.wisdom__audio-btn:hover:not(:disabled) img {
+    opacity: 1;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .wisdom {
+        margin: calc(var(--space-unit) * 1.5);
+        padding: calc(var(--space-unit) * 2);
+    }
+
+    .wisdom__idiom {
+        font-size: 24px;
+    }
+}

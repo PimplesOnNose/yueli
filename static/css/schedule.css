@@ -1,0 +1,227 @@
+/* ── schedule.css ───────────────────────────────────────────
+ * Agenda panel, event editor modal, lock screen
+ * ─────────────────────────────────────────────────────────── */
+
+/* ── Agenda Panel ───────────────────────────────────────── */
+.agenda {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: calc(var(--space-unit) * 2.5);
+    margin: 0 calc(var(--space-unit) * 3);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid var(--border-subtle);
+}
+
+.agenda__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: calc(var(--space-unit) * 1.5);
+}
+
+.agenda__date {
+    font-family: var(--font-display);
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+.agenda__add {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-wood);
+    padding: 6px 16px;
+    border: 1px solid var(--border-jade);
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+}
+
+.agenda__add:hover {
+    background: rgba(74, 158, 138, 0.1);
+}
+
+.agenda__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-unit);
+}
+
+.agenda__empty {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-style: italic;
+    padding: calc(var(--space-unit) * 2) 0;
+}
+
+/* ── Agenda Event Items ─────────────────────────────────── */
+.agenda__item {
+    display: flex;
+    align-items: flex-start;
+    gap: calc(var(--space-unit) * 1.5);
+    padding: calc(var(--space-unit) * 1.25);
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+    cursor: pointer;
+}
+
+.agenda__item:hover {
+    background: var(--bg-elevated);
+}
+
+.agenda__item-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+}
+
+.agenda__item-time {
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-secondary);
+    min-width: 50px;
+    flex-shrink: 0;
+}
+
+.agenda__item-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.agenda__item--holiday {
+    opacity: 0.8;
+}
+
+.agenda__item--solar-term {
+    opacity: 0.8;
+}
+
+.agenda__item-name-zh {
+    font-family: var(--font-display);
+    font-weight: 500;
+    margin-right: calc(var(--space-unit) * 0.75);
+}
+
+.agenda__item-name-en {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.agenda__item-lunar {
+    font-size: 12px;
+    color: var(--color-earth);
+    margin-left: calc(var(--space-unit) * 0.5);
+}
+
+.agenda__item-type {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: capitalize;
+    margin-left: calc(var(--space-unit) * 0.5);
+}
+
+/* ── Modal Base ─────────────────────────────────────────── */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.modal__card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: calc(var(--space-unit) * 4);
+    max-width: 420px;
+    width: 90%;
+    z-index: 1;
+}
+
+.modal__title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    margin-bottom: calc(var(--space-unit) * 2.5);
+    text-align: center;
+}
+
+.modal__input {
+    width: 100%;
+    margin-bottom: calc(var(--space-unit) * 1.5);
+    padding: calc(var(--space-unit) * 1.25);
+}
+
+.modal__textarea {
+    width: 100%;
+    min-height: 80px;
+    margin-bottom: calc(var(--space-unit) * 2);
+    padding: calc(var(--space-unit) * 1.25);
+    resize: vertical;
+}
+
+.modal__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: calc(var(--space-unit) * 1.5);
+}
+
+.modal__row label {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.modal__error {
+    color: var(--color-fire);
+    font-size: 13px;
+    margin-bottom: calc(var(--space-unit) * 1.5);
+    text-align: center;
+}
+
+.modal__actions {
+    display: flex;
+    gap: calc(var(--space-unit) * 1.5);
+    justify-content: flex-end;
+}
+
+.modal__button {
+    font-weight: 500;
+    padding: calc(var(--space-unit) * 1) calc(var(--space-unit) * 2.5);
+    border-radius: var(--radius-md);
+    background: var(--color-wood);
+    color: #fff;
+    transition: background var(--transition-fast);
+}
+
+.modal__button:hover {
+    background: #3d8a78;
+}
+
+.modal__button--secondary {
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+}
+
+.modal__button--secondary:hover {
+    background: var(--bg-elevated);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .agenda {
+        margin: 0 calc(var(--space-unit) * 1.5);
+    }
+}

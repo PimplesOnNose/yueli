@@ -1,0 +1,11 @@
+/* ── main.css ───────────────────────────────────────────────
+ * Imports all CSS modules in order
+ * ─────────────────────────────────────────────────────────── */
+
+@import 'variables.css';
+@import 'base.css';
+@import 'icons.css';
+@import 'calendar.css';
+@import 'schedule.css';
+@import 'wisdom.css';
+@import 'animations.css';

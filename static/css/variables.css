@@ -1,0 +1,97 @@
+/* ── variables.css ──────────────────────────────────────────
+ * Wu Xing color tokens + refined Chinese aesthetic
+ * Inspired by eight-flavors atmospheric design
+ * ─────────────────────────────────────────────────────────── */
+
+:root {
+    /* === Wu Xing — Five Elements === */
+    --color-wood:          #4a9e8a;   /* Personal events — Jade */
+    --color-fire:          #c8302c;   /* Chinese holidays — Vermilion 朱砂红 */
+    --color-fire-deep:     #8e1a18;
+    --color-fire-gold:     #c9a55c;   /* Chinese holiday accent — Imperial gold 金 */
+    --color-earth:         #c9a96e;   /* Solar terms, lunar markers */
+    --color-metal:         #8faacc;   /* US holidays — Azurite 石青 */
+    --color-metal-light:   rgba(143, 170, 204, 0.7);
+    --color-water:         #5a8e9e;   /* Reminders */
+
+    /* === Theme Colors — Dark (Ink Night) === */
+    --bg:                  #0a0a14;
+    --bg-elevated:         #131522;
+    --bg-card:             #181a2a;
+    --bg-surface:          #1e2030;
+    --bg-wisdom:           #0c1219;
+
+    --fg:                  #f4ecd8;
+    --fg-muted:            #b9ac8c;
+    --fg-soft:             rgba(244, 236, 216, 0.45);
+
+    --paper-edge:          #2a2c3e;
+    --hairline:            rgba(244, 236, 216, 0.18);
+    --hairline-strong:     rgba(244, 236, 216, 0.40);
+
+    --accent:              #e0b558;
+    --accent-deep:         #c89a3a;
+    --gold-line:           #d4a93b;
+
+    --element-bg-glow:     rgba(44, 74, 107, 0.12);
+
+    /* === Seasonal Temperature Offsets === */
+    --seasonal-hue-shift:  0deg;
+    --seasonal-bg-tint:    transparent;
+    --accent-seasonal:     var(--accent);  /* Overridden by JS based on season */
+
+    /* === Typography === */
+    --font-display-zh:     'Ma Shan Zheng', 'Noto Serif SC', serif;
+    --font-body-zh:        'Noto Serif SC', 'Songti SC', serif;
+    --font-display-en:     'Cormorant Garamond', 'Times New Roman', serif;
+    --font-body-en:        'Cormorant Garamond', Georgia, serif;
+    --font-ui:             'Inter', -apple-system, system-ui, sans-serif;
+    --font-pinyin:         'Cormorant Garamond', 'Inter', sans-serif;
+
+    /* === Spacing === */
+    --space-unit:          8px;
+    --radius-sm:           4px;
+    --radius-md:           8px;
+    --radius-lg:           12px;
+    --radius-pill:         999px;
+
+    /* === Transitions === */
+    --transition-fast:     150ms ease;
+    --transition-normal:   250ms ease;
+    --transition-slow:     500ms ease;
+    --transition-reveal:   700ms cubic-bezier(.22, 1, .36, 1);
+    --transition-seasonal: 7d ease;
+
+    /* === Shadows === */
+    --shadow-sm:           0 1px 3px rgba(0,0,0,0.2);
+    --shadow-md:           0 4px 12px rgba(0,0,0,0.25);
+    --shadow-lg:           0 8px 24px rgba(0,0,0,0.3);
+    --shadow-glow:         0 0 20px rgba(212, 169, 59, 0.15);
+}
+
+/* ── Light Theme (Silk) ─────────────────────────────────── */
+[data-theme="light"] {
+    --bg:                  #f3e9d2;
+    --bg-elevated:         #faf2e2;
+    --bg-card:             #fcf5e6;
+    --bg-surface:          #f6ede0;
+    --bg-wisdom:           #f5f0e8;
+
+    --fg:                  #2b1f15;
+    --fg-muted:            #6b563a;
+    --fg-soft:             rgba(43, 31, 21, 0.55);
+
+    --paper-edge:          #d8c39b;
+    --hairline:            rgba(43, 31, 21, 0.20);
+    --hairline-strong:     rgba(43, 31, 21, 0.40);
+
+    --accent:              #2c4a6b;
+    --accent-deep:         #1f4f6e;
+    --gold-line:           #c9a55c;
+
+    --element-bg-glow:     rgba(44, 74, 107, 0.08);
+
+    --color-fire:          #c8302c;
+    --color-fire-deep:     #8e1a18;
+    --color-fire-gold:     #c9a55c;
+}

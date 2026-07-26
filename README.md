@@ -169,4 +169,4 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
-Crafted with 🤖 Pi <https://pi.dev> | GLM <https://z.ai>
+Crafted with 🤖 [Pi](https://pi.dev) | [GLM](https://z.ai)

@@ -5,6 +5,8 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)
 
+![Yueli Screenshot](screenshot.png)
+
 ## Overview
 
 Yueli (月历, "moon calendar") is a personal, encrypted web calendar that displays both the Gregorian and Chinese Lunisolar (农历) calendars side by side with equal prominence. Holidays and special dates are color-coded using the Wu Xing (五行) Five Elements system. Personal events are encrypted client-side with AES-256-GCM, with optional browser-based reminders.

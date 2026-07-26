@@ -166,3 +166,7 @@ The app's design is guided by traditional Chinese aesthetic principles:
 ## License
 
 MIT License — see [LICENSE](LICENSE) for details.
+
+---
+
+Crafted with 🤖 Pi <https://pi.dev> | GLM <https://z.ai>
